@@ -21,6 +21,8 @@ i=0
 occur=dict()
 gn=GoogleNews()
 sstring=input("Enter your search : ") #google query
+filename=input("Enter you output filename: ")
+filename=filename+".csv"
 wcounts=input("Enter the strings that you want to search : ") #Atleast one entry, it searches the count of ties the word exists in the page
 words=[item for item in wcounts.split()]
 for word in words:
@@ -58,4 +60,4 @@ for item in search['entries']:
 
 df = pd.DataFrame(data)
 print(df)
-df.to_csv('data.csv', index=False)
+df.to_csv(filename, index=False)
